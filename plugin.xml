@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="org.maria.RecordVoice"
+      version="0.1.0">
+    <name>RecordVoice</name>
+    <description>Sample PhoneGap RecordVoice Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,RecordVoice</keywords>
+ 
+ 
+    <js-module src="www/RecordVoice.js" name="RecordVoice">
+        <clobbers target="window.RecordVoice" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="RecordVoice">
+                <param name="android-package" value="org.maria.RecordVoice.RecordVoice"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="src/android/RecordVoice.java" target-dir="src/org/maria/RecordVoice" />      
+     </platform>          
+</plugin>
