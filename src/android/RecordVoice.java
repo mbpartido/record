@@ -96,45 +96,7 @@ public static final String ACTION_ADD_RECORD_ENTRY = "startrecording";
         
         
         /** Called when the activity is first created. */
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-                
-                // Defined SoundLevelView in main.xml file
-                setContentView(R.layout.main);
-                mStatusView = (TextView) findViewById(R.id.status);
-               
-                // Used to record voice
-               mDisplay = (SoundLevelView) findViewById(R.id.volume);
-                
-                PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
-                mWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "NoiseAlert");
-        }
-
-        
-        @Override
-        public void onResume() {
-                super.onResume();
-                //Log.i("Noise", "==== onResume ===");
-                
-                initializeApplicationConstants();
-                mDisplay.setLevel(0, mThreshold);
-                
-                if (!mRunning) {
-                    mRunning = true;
-                    start();
-                }
-        }
-
-        @Override
-        public void onStop() {
-                super.onStop();
-               // Log.i("Noise", "==== onStop ===");
-               
-                //Stop noise monitoring
-                stop();
-               
-        }
+   
 
         private void start() {
                 //Log.i("Noise", "==== start ===");
