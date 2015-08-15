@@ -73,9 +73,6 @@ public static final String ACTION_ADD_RECORD_ENTRY = "startrecording";
                             }
                         }
                         
-                        // Runnable(mPollTask) will again execute after POLL_INTERVAL
-                        mHandler.postDelayed(mPollTask, POLL_INTERVAL);
-                     
                      callbackContext.success(); 
                 }
             }
